@@ -31,8 +31,84 @@ import time
 #########################################################
 #                   Your Code Goes Below                #
 #########################################################
+def drawSquare(darty=None, width=0, top_left_x=0, top_left_y=0):
+  darty.up()
+  darty.goto(top_left_x, top_left_y)
+  for i in range (4):
+    darty.down()
+    darty.forward(width)
+    darty.right(90)
+    darty.up()
 
+def drawLine(darty=None, x_start=0, y_start=0, x_end=0, y_end=0):
+  darty.up()
+  darty.goto(x_start, y_start)
+  darty.down()
+  darty.goto(x_end, y_end)
+  darty.up
 
+def drawCircle(darty=None, radius=0):
+  darty.circle(radius, steps=360)
+
+def setUpDartboard(myscreen=None, darty=None):
+  myscreen.setworldcoordinates(-3, -3, 3, 3)
+  drawSquare(darty, 2, -1, 1)
+  drawLine(darty, -1, 0, 1, 0)
+  drawLine(darty, 0, 1, 0, -1)
+  drawCircle(darty, 1)
+
+def isInCircle(darty=None, circle_center_x=0, circle_center_y=0, radius=0):
+  if darty.distance(0,0) < radius:
+    return 'Is In Circle'
+    darty.dot(10, 'green')
+  if darty.distance(0,0) >= radius:
+    return 'Is Not In Circle'
+    darty.dot(10, 'red')
+
+def throwDart(darty=None, in_color='green', out_color='red'):
+  x = random.random()
+  negx = random.uniform(-1,1)
+  resultx = x * negx
+  y = random.random()
+  negy = random.uniform(-1,1)
+  resulty = y * negy
+  darty.up()
+  darty.goto(resultx, resulty)
+  if darty.distance(0,0) >= 1:
+    darty.color(out_color)
+  else:
+    darty.color(in_color)
+  darty.dot()
+  darty.color('black')
+  darty.down()
+
+def playDarts(darty=None):
+  Ascore = 0
+  Bscore = 0
+  for i in range (10):
+    throwDart(darty, 'yellow')
+    if isInCircle(darty=darty, radius=1):
+      Ascore += 1
+      print("Player A hit")
+    throwDart(darty, in_color='purple')
+    if isInCircle(darty=darty, radius=1):
+      Bscore += 1
+      print("Player B hit")
+    if Ascore > Bscore:
+      print("Winner: Player A!")
+    elif Ascore == Bscore:
+      print("Winner: Tie!")
+    else:
+      print("Winner: Player B!")
+
+def montePi(darty=None, num_darts=0):
+  inside_count=0
+  outside_count=0
+  for i in range(0, num_darts):
+    throwDart(darty=darty)
+  if isInCircle(darty=darty, circle_center_x=0, circle_center_y=0, radius=1):
+    inside_count = outside_count +1
+  return((inside_count/num_darts)*4)
 
 #########################################################
 #         Do not alter any code below here              #
