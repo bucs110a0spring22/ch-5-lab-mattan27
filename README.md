@@ -1,25 +1,22 @@
 #### CS 110
-# Chapter 5 - Lab - Selection
-
-### [Assignment Description](https://docs.google.com/document/d/1QfPsRfo1kZoQw4p0DhjxZskNfE0eLAV6Z6SgPSleDM4/edit?usp=sharing)
+# Midterm - Python Programming
 
 ***
 
 _Replace anything surrounded by the `< >` symbols._
 
 ## SUMMARY:
-Coding to draw a dartboard and randomizing where the darts hit.
+What did you clean up?: Some codes that were longer
 
-## GRACE DAYS
-Grace days used for this assignment: 0
+Summary of function(s) added: Drawing different shapes
 
-Grace days remaining: 5/5
+Summary of Feature Added: A game to start and stop a car
 
 ## KNOWN BUGS AND INCOMPLETE PARTS:
  None
 
 ## REFERENCES:
- None
+ docs.python.org
 
 ## MISCELLANEOUS COMMENTS:
  None
