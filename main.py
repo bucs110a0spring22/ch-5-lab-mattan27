@@ -111,7 +111,9 @@ def montePi(darty=None, num_darts=0):
       inside_count = outside_count +1
   return((inside_count/num_darts)*4)
 
-def draw_shape(shape):
+def draw_shape(myscreen, shape):
+
+  myscreen.setworldcoordinates(-500, -500, 500, 500)
   
   if shape == "square":
     for i in range(0,4):

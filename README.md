@@ -13,7 +13,7 @@ Summary of function(s) added: Drawing different shapes
 Summary of Feature Added: A game to start and stop a car
 
 ## KNOWN BUGS AND INCOMPLETE PARTS:
- None
+ Having the new function make the shapes.
 
 ## REFERENCES:
  docs.python.org
